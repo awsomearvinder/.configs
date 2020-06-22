@@ -1,0 +1,6 @@
+{
+	"suggest.enablePreview":true,
+	"rust-analyzer.featureFlags" : {
+		"completion.enable-postfix":true
+	}
+}

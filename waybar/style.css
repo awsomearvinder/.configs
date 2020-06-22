@@ -1,0 +1,30 @@
+*{
+    border-radius:0%;
+    font-family: Roboto, 'Font awesome 5';
+    color:#ffffff;
+}
+window#waybar{
+    background-color:#1b2b34;
+    opacity:1;
+}
+#custom-battery {
+    background-color:rgb(53, 183, 235);
+    padding:0px 15px;
+    font-weight: 400;
+    color:#000000;
+}
+#workspaces button{
+    color:#ffffff;
+    background:transparent;
+    padding:0 10px;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow:inherit;
+    background:#5b779e;
+    border-color:#5b779e;
+}
+#workspaces button.focused {
+    border-bottom: 2px solid #ffffff;
+    background:#5b779e;
+}
