@@ -10,3 +10,5 @@
 !omf
 !README.md
 !.gitignore
+!systemd
+!PulseEffects
