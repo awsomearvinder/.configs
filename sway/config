@@ -18,8 +18,10 @@ set $right l
 set $term urxvt
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu ~/.config/sway/launcher
 
+set $menu ~/.config/sway/launcher --embed | xargs swaymsg exec -- 
+bindsym $mod+z exec "~/.config/sway/launcher"
+for_window [app_id="launcher"] floating enable
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
