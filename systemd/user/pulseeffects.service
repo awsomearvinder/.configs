@@ -1,0 +1,11 @@
+[Unit]
+Description=Pulseeffects start
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pulseeffects --gapplication-service
+ExecStop=/usr/bin/pulseeffects -q
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
