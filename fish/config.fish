@@ -10,7 +10,7 @@ end
 set -Ua fish_user_paths ~/.cargo/bin
 
 #Zoxide
-source ./zoxide.fish
+source ~/.config/fish/zoxide.fish
 
 #Custom abbr's
 if status --is-interactive
