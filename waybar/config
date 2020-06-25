@@ -17,7 +17,7 @@
 			"format-icons": ["","","","",""],
 			"return-type" : "json",
 			"interval" : "loop",
-			"exec" : "./waybar_server"
+			"exec" : "~/.config/waybar/waybar_server"
 		}
 
 }
