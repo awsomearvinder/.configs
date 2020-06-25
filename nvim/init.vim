@@ -46,6 +46,10 @@ let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-rust-analyzer' ]
 
 "AUTOFORMAT
 au BufWrite * :Autoformat
+"turn off autoformatting by default
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 
 "FZF
 let $FZF_DEFAULT_COMMAND =  "rg --files"
