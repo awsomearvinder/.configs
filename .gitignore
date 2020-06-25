@@ -4,8 +4,10 @@
 !alacritty
 !base16-shell
 !fish
+fish/fish_variables
 !mako
 !nvim
+nvim/.netrwhist
 !waybar
 !omf
 !README.md
@@ -13,5 +15,3 @@
 !systemd
 !PulseEffects
 !launcher
-fish/fish_variables
-nvim/.netrwhist
