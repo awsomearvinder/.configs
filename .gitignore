@@ -13,3 +13,5 @@
 !systemd
 !PulseEffects
 !launcher
+fish/fish_variables
+nvim/.netrwhist
