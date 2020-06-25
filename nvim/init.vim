@@ -80,8 +80,7 @@ if filereadable(expand("~/.vimrc_background"))
 	source ~/.vimrc_background
 endif
 
-nnoremap <c-t> :FloatermNew <CR>
-nnoremap <c-r> :FloatermToggle <CR>
+nnoremap <c-t> :FloatermToggle <CR>
 nnoremap <silent> ; :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 noremap <c-c> <esc>
