@@ -42,7 +42,7 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 nmap <silent> gd <Plug>(coc-definition)
 command! -nargs=0 Format :call CocAction('format')
-autocmd BufWritePost * :Format
+autocmd BufWritePre * :Format
 let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-rust-analyzer' ]
 
 "FZF
