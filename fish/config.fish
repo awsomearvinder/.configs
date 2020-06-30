@@ -16,4 +16,5 @@ source ~/.config/fish/zoxide.fish
 if status --is-interactive
 abbr -a ls "exa -a"
 abbr -a lsl "exa -al"
+abbr -a cargod "cargo makedocs --open"
 end
