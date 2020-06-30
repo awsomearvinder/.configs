@@ -22,7 +22,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'chriskempson/base16-vim'
-Plug 'Chiel92/vim-autoformat'
+Plug 'andys8/vim-elm-syntax'
 
 call plug#end()
 
@@ -40,16 +40,10 @@ inoremap <silent><expr> <TAB>
 			\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
+nmap <silent> gd <Plug>(coc-definition)
+command! -nargs=0 Format :call CocAction('format')
+autocmd BufWritePost * :Format
 let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-rust-analyzer' ]
-
-"AUTOFORMAT
-au BufWrite * :Autoformat
-"turn off autoformatting by default
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
 
 "FZF
 let $FZF_DEFAULT_COMMAND =  "rg --files"
