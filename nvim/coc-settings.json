@@ -1,6 +1,20 @@
 {
-	"suggest.enablePreview":true,
-	"rust-analyzer.featureFlags" : {
-		"completion.enable-postfix":true
-	}
+	"suggest.enablePreview": true,
+	"languageserver": {
+		"elmLS": {
+			"command": "elm-language-server",
+			"filetypes": [
+				"elm"
+			],
+			"rootPatterns": [
+				"elm.json"
+			],
+			"initializationOptions": {
+				"elmAnalyseTrigger": "change"
+			}
+		}
+	},
+	"rust-analyzer.checkOnSave.command": "clippy",
+	"rust-analyzer.serverPath": "rust-analyzer",
+	"rust-analyzer.inlayHints.chainingHints": false
 }
