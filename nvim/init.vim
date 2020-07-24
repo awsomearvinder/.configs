@@ -23,6 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'chriskempson/base16-vim'
 Plug 'andys8/vim-elm-syntax'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -43,7 +44,7 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 nmap <silent> gd <Plug>(coc-definition)
 command! -nargs=0 Format :call CocAction('format')
 autocmd BufWritePre * :Format
-let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-rust-analyzer' ]
+let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-rust-analyzer', 'coc-go']
 
 "FZF
 let $FZF_DEFAULT_COMMAND =  "rg --files"
@@ -78,6 +79,7 @@ if filereadable(expand("~/.vimrc_background"))
 	source ~/.vimrc_background
 endif
 
+set guifont=FiraCode:h12
 nnoremap <c-t> :FloatermToggle <CR>
 nnoremap <silent> ; :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
