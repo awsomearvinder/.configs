@@ -28,5 +28,6 @@
 	},
 	"rust-analyzer.checkOnSave.command": "clippy",
 	"rust-analyzer.serverPath": "rust-analyzer",
-	"rust-analyzer.inlayHints.chainingHints": false
+	"rust-analyzer.inlayHints.chainingHints": false,
+	"codeLens.enable": true
 }
