@@ -7,24 +7,24 @@ set incsearch
 set hlsearch
 set shiftwidth=4
 set tabstop=4
+let mapleader=" "
 
-let mapleader = "\<Space>"
 call plug#begin('~/.vim/plugged')
-
-Plug 'gioele/vim-autoswap'
-Plug 'jiangmiao/auto-pairs'
-" GUI enhancements
-Plug 'itchyny/lightline.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'airblade/vim-rooter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'voldikss/vim-floaterm'
-Plug 'chriskempson/base16-vim'
-Plug 'andys8/vim-elm-syntax'
-Plug 'fatih/vim-go'
-
+	Plug 'gioele/vim-autoswap'
+	Plug 'jiangmiao/auto-pairs'
+	" GUI enhancements
+	Plug 'itchyny/lightline.vim'
+	Plug 'machakann/vim-highlightedyank'
+	Plug 'airblade/vim-rooter'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'junegunn/fzf.vim'
+	Plug 'voldikss/vim-floaterm'
+	Plug 'chriskempson/base16-vim'
+	Plug 'andys8/vim-elm-syntax'
+	Plug 'fatih/vim-go'
+	Plug 'leafgarland/typescript-vim'
+	Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 
@@ -42,9 +42,19 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 nmap <silent> gd <Plug>(coc-definition)
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>
+
 command! -nargs=0 Format :call CocAction('format')
 autocmd BufWritePre * :Format
-let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-rust-analyzer', 'coc-go']
+let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-rust-analyzer', 'coc-go', 'coc-actions', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-tsserver', 'coc-prettier']
 
 "FZF
 let $FZF_DEFAULT_COMMAND =  "rg --files"
