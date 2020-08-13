@@ -74,7 +74,8 @@ workspace 10 output HDMI-A-1
 #Logitech MX Master 2S
 input "1133:16489:Logitech_MX_Master_2S" {
 	pointer_accel -1
-		scroll_factor 5
+	scroll_factor 1
+    natural_scroll enabled
 }
 
 ### Key bindings
@@ -99,6 +100,15 @@ floating_modifier $mod normal
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
+#screenshots
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+Shift+p exec grim -g "0,0 1920x1080" - | wl-copy
+
+#misc. keybinds
+bindsym $mod+Shift+d exec shutdown 0
+bindsym 0x1008FF02 exec light -A 1
+bindsym 0x1008FF03 exec light -U 1
 
 
 # exit sway (logs you out of your Wayland session)
@@ -224,14 +234,6 @@ bindsym $mod+r mode "resize"
 bar {
 	swaybar_command waybar
 }
-#screenshots
-bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
-bindsym $mod+Shift+p exec grim -g "0,0 1920x1080" - | wl-copy
-
-#misc. keybinds
-bindsym $mod+Shift+d exec shutdown 0
-bindsym 0x1008FF02 exec light -A 1
-bindsym 0x1008FF03 exec light -U 1
 
 #notifications
 exec mako
@@ -244,6 +246,6 @@ gaps outer 0
 default_floating_border none
 default_border pixel 2
 client.unfocused #333333 #333333 #333333
-client.focused #F99157 #EC5f67 #F99157
+client.focused #F99157 #F99157 #F99157
 
 include /etc/sway/config.d/*
