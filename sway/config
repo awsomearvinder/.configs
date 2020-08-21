@@ -246,6 +246,6 @@ gaps outer 0
 default_floating_border none
 default_border pixel 2
 client.unfocused #333333 #333333 #333333
-client.focused #F99157 #F99157 #F99157
+client.focused #EC5F67 #EC5F67 #EC5F67
 
 include /etc/sway/config.d/*
